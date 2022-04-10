@@ -10,6 +10,18 @@ const textureLoader = new THREE.TextureLoader()
 // Debug
 // const gui = new dat.GUI()
 
+// Preload
+function preloadImage(url)
+{
+  var img=new Image();
+  img.src=url;
+}
+let count = 1
+while(count < 9){
+  preloadImage(`./photographs/${count}.jpg`);
+  count++;
+}
+
 // Canvas
 const canvas = document.querySelector('canvas.webgl')
 
@@ -33,11 +45,12 @@ const geometry = new THREE.PlaneBufferGeometry(1.3, 1.6)
 // Objects
 for(let i = 0; i < 8; i++){
   const material = new THREE.MeshBasicMaterial({
-    map: textureLoader.load(`/photographs/${i+1}.jpg`)
+    map: textureLoader.load(`./photographs/${i+1}.jpg`)
   })
 
   const img = new THREE.Mesh(geometry, material)
-  img.position.set(1, i*-2.55)
+
+  img.position.set(1, i*-2.55 + 0.1)
 
   scene.add(img)
 }
@@ -119,6 +132,7 @@ function onMouseWheel(event){
   y = - event.deltaY * 0.00125
 }
 
+
 const mouse = new THREE.Vector2()
 
 window.addEventListener('mousemove', (event) => {
@@ -154,7 +168,7 @@ const tick = () =>
     for(const intersect of intersects){
       gsap.to(intersect.object.scale, {x: 1.15, y: 1.15})
       gsap.to(intersect.object.rotation, {y: -.1})
-      gsap.to(intersect.object.position, {z: -0})
+      gsap.to(intersect.object.position, {z: 0.05})
     }
     for(const object of objs){
       if(!intersects.find(intersect => intersect.object === object)){
