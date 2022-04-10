@@ -1,0 +1,56 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+html,
+body{
+	height: 100vh;
+	font-family: 'Poppins';
+}
+.webgl{
+	position: fixed;
+	top: 0;
+	left: 0;
+	outline: none;
+	pointer-events: none;
+}
+.content{
+	position: absolute;
+	display: grid;
+	align-items: center;
+	justify-content: flex-start;
+	z-index: 10;
+	width: 100vw;
+	height: 100vh;
+	padding: 150px;
+	box-sizing: border-box;
+}
+h1{
+	color: #FFF;
+	font-family: 'Montserrat Subrayada';
+	font-size: 55px;
+	background: linear-gradient(120deg, #7a64eb 0%, #64e8de 100%);
+	-webkit-background-clip: text;
+	font-weight: 800;
+	-webkit-text-fill-color: transparent;
+}
+.content span{
+	color: #fff;
+	font-family: 'Rajdhani';
+	font-size: 25px;
+	letter-spacing: 1px;
+}
+@media(max-width: 700px){
+  .content{
+	padding: 20px;
+  }
+  h1{
+	font-size: 35px;
+  }
+  .content span{
+	font-size: 21px;
+  }
+}
+
+
+/*# sourceMappingURL=main.css.map*/
