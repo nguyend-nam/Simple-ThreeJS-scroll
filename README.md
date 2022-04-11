@@ -1,2 +1,3 @@
-# Simple-ThreeJS-scroll
-Simple site for start learning ThreeJS
+# ThreeJS 3D parallax scroll
+### [→ View deployed site](https://skyscrapersthreejs.netlify.app/)
+3D effect on scrolling and hovering using ThreeJS library.
